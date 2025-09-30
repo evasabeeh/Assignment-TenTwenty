@@ -112,7 +112,7 @@ export default function WeeklyTimesheetPage() {
             <main className="max-w-5xl mx-auto mt-4 px-4">
                 <div className="bg-white shadow rounded-md px-6 py-4">
                     <div className="flex items-center justify-between mb-4">
-                        <h2 className="text-xl font-bold">This week’s timesheet</h2>
+                        <h2 className="text-lg md:text-xl font-bold">This week’s timesheet</h2>
                         <div className="text-sm text-gray-600 flex flex-col items-end">
                             <span className="mb-1">{cappedHours}/{totalCapacity} hrs</span>
                             <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
@@ -127,8 +127,8 @@ export default function WeeklyTimesheetPage() {
 
                     {Object.keys(tasksByDay).map((day) => (
                         <div key={day} className="mb-6">
-                            <div className="flex items-start gap-4">
-                                <div className="w-20 pt-2 text-sm font-bold text-gray-700">{day}</div>
+                            <div className="flex items-start gap-2 md:gap-4">
+                                <div className="w-16 md:w-20 pt-2 text-xs md:text-sm font-bold text-gray-700">{day}</div>
 
                                 <div className="flex-1 space-y-2">
                                     {tasksByDay[day].map((entry, idx) => {
@@ -138,7 +138,7 @@ export default function WeeklyTimesheetPage() {
                                                 key={taskKey}
                                                 className="relative flex items-center justify-between border border-gray-200 rounded-md p-2"
                                             >
-                                                <div className="text-sm text-gray-800">{entry.task}</div>
+                                                <div className="text-xs md:text-sm text-gray-800">{entry.task}</div>
                                                 <div className="flex items-center gap-4">
                                                     <div className="text-xs text-gray-400">{entry.hours} hrs</div>
                                                     <div className="text-xs font-medium px-2 py-1 rounded bg-blue-100 text-blue-800">
@@ -155,7 +155,7 @@ export default function WeeklyTimesheetPage() {
                                                 </div>
 
                                                 {openMenuKey === taskKey && (
-                                                    <div className="absolute right-2 top-10 bg-white border border-gray-200 shadow-md rounded-md text-sm z-10 w-28">
+                                                    <div className="absolute right-2 top-10 bg-white border border-gray-200 shadow-md rounded-md text-xs md:text-sm z-10 w-28">
                                                         <button
                                                             onClick={() => {
                                                                 console.log(`Edit ${taskKey}`);
@@ -178,7 +178,7 @@ export default function WeeklyTimesheetPage() {
                                     })}
 
                                     <button
-                                        className="w-full border border-dashed text-gray-500 hover:bg-blue-100 hover:text-blue-800 text-sm font-medium py-2 rounded-md transition"
+                                        className="w-full border border-dashed text-gray-500 hover:bg-blue-100 hover:text-blue-800 text-xs md:text-sm font-medium py-2 rounded-md transition"
                                         onClick={() => {
                                             setSelectedDay(day);
                                             setNewTask({ project: '', type: '', description: '', hours: 0 });

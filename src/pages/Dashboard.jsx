@@ -70,7 +70,7 @@ export default function TimesheetDashboard() {
             <Header />
             <main className="max-w-5xl mx-auto mt-4 px-4">
                 <div className="bg-white shadow rounded-md px-6 py-4">
-                    <h2 className="text-xl font-bold mb-4">Your Timesheets</h2>
+                    <h2 className="text-lg md:text-xl font-bold mb-4">Your Timesheets</h2>
                     <div className="flex gap-4 mb-6">
                         <div className="flex flex-col">
                             <select
@@ -142,7 +142,7 @@ export default function TimesheetDashboard() {
                                         <td className="px-4 py-4 border-b border-gray-200 text-right">
                                             <Link
                                                 to={`/timesheet/${entry.week}`}
-                                                className="text-blue-600 hover:underline text-sm"
+                                                className="text-blue-600 hover:underline text-xs md:text-sm"
                                                 onClick={e => e.stopPropagation()}
                                             >
                                                 {entry.action}
